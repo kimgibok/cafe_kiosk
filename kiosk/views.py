@@ -1,5 +1,12 @@
 from django.shortcuts import render
-from django.http import HttpResponse
+from django.views.generic import ListView
 
-def index(request):
-    return HttpResponse("안녕하세요 카페 Like Lion 입니다.")
+from kiosk.models import Drink
+
+class cafe_menuLV(ListView):
+    model = Drink
+    template_name = 'kiosk/cafe_menu.html'
+
+    def get_queryset(self):
+        # select_related를 사용하여 DrinkType과의 조인을 최적화
+        return Drink.objects.select_related('type').all()
