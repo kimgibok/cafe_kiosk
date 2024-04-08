@@ -22,7 +22,7 @@ class Drink(models.Model):
 class Order(models.Model):
     # customer_id = models.ForeignKey(Customer, on_delete=models.SET_NULL, null=True) # customer_id가 사라지면 null로
     order_date = models.DateTimeField(auto_now_add=True)
-    total_price = models.IntegerField()
+    total_price = models.IntegerField(default=0)
 
     def __str__(self):
         return f"주문번호 {self.id}"

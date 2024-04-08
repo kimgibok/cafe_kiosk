@@ -44,7 +44,7 @@
                   <div class="card-body">
                     <h5 class="card-title">{{drink.name}}</h5>
                     <p class="card-text">가격: {{drink.price}}</p>
-                    <a href="#" class="btn btn-success">주문하기</a>
+                    <a href="{% url 'kiosk:menu_order' %}" class="btn btn-success">주문하기</a>
                   </div>
                 </div>
               </div>

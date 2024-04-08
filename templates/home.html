@@ -23,11 +23,12 @@
         <h1 class="text-success">안녕하세요 멋사카페입니다!</h1>
         <br>
         <div class="container text-center">
-        <form action="{% url 'kiosk:menu_list' %}"> <!-- Django URL 태그를 사용하여 주문 페이지로의 링크를 생성 -->
-            <button type="submit" class="btn btn-success btn-lg">
-                주문하시겠습니까?
-            </button>
-        </form>
+            <form method="post">
+                {% csrf_token %}
+                <button type="submit" class="btn btn-success btn-lg">
+                    주문하시겠습니까?
+                </button>
+            </form>
         </div>
     </div>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
