@@ -2,9 +2,10 @@
 <form method="post">
     {% csrf_token %}
     {{ form.as_p }}
-    <button type="button" onclick="increaseQuantity()">+</button>
-    <button type="button" onclick="decreaseQuantity()">-</button>
-    <button type="submit">담기</button>
+    <button type="button" onclick="increaseQuantity()" class="btn btn-success">+</button>
+    <button type="button" onclick="decreaseQuantity()" class="btn btn-success">-</button>
+    <button type="submit" class="btn btn-success">주문담기</button>
+    <a href="" class="btn btn-success">결제하기</a>
 </form>
 
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
