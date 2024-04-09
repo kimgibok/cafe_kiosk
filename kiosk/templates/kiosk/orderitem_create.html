@@ -1,7 +1,25 @@
-{{object.drink_set}}
-<h1>Update Order</h1>
+
 <form method="post">
     {% csrf_token %}
     {{ form.as_p }}
+    <button type="button" onclick="increaseQuantity()">+</button>
+    <button type="button" onclick="decreaseQuantity()">-</button>
     <button type="submit">담기</button>
 </form>
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+<script>
+    function increaseQuantity() {
+        var quantityInput = $('#id_quantity');
+        var currentValue = parseInt(quantityInput.val());
+        quantityInput.val(currentValue + 1);
+    }
+
+    function decreaseQuantity() {
+        var quantityInput = $('#id_quantity');
+        var currentValue = parseInt(quantityInput.val());
+        if (currentValue > 1) {
+            quantityInput.val(currentValue - 1);
+        }
+    }
+</script>
